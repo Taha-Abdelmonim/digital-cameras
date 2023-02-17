@@ -1,0 +1,13 @@
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1300px !important;
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    right: -50% !important;
+  }
+  body.blog .section-1 {
+    background-size: cover;
+  }
+}

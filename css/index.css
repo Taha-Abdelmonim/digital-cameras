@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --main-color-1: #2e3192;
+  --main-color-2: #fff;
+  --transition: all 0.3s;
+}
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #2c3e50;
+  z-index: 10000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-animation: hide 2s linear 1 both;
+  animation: hide 2s linear 1 both;
+}
+.loader .logo-loader {
+  width: 170px;
+  height: 75px;
+  -webkit-animation: spinner 2s linear 1 both;
+  animation: spinner 2s linear 1 both;
+}
+.loader .logo-loader img {
+  height: 80px;
+  background-color: #ecf0f1;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1) translateX(-100%);
+  }
+  100% {
+    -webkit-transform: scale(2);
+    transform: scale(2) translateX(100%);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1) translateX(-50%);
+  }
+  100% {
+    -webkit-transform: scale(3);
+    transform: scale(3) translateX(50%);
+  }
+}
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.header-bottom.fixed {
+  z-index: 9999;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+
+body.open-menu {
+  position: relative;
+  right: 50%;
+}
+body.open-menu .overlay-span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 20;
+}
+body.open-menu .header-bottom.fixed {
+  right: 50% !important;
+}
+
+nav.open {
+  right: 0% !important;
+}
+nav a {
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  background-color: var(--main-color-2);
+  bottom: -10px;
+  left: 0;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+nav a:hover {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  color: var(--main-color-2);
+}
+nav a:hover::after,
+nav a.active-link::after {
+  width: 100%;
+}
+
+.zilal-alquran {
+  background: url("../images/home/section-1/bg-home.png");
+  position: relative;
+}
+.zilal-alquran::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: url("../images/home/section-1/img-2.png") no-repeat;
+  background-size: 100% 100%;
+  z-index: -3;
+}
+.zilal-alquran > img {
+  position: absolute;
+  z-index: 1;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+}
+.zilal-alquran > img:first-of-type {
+  -webkit-animation: moveScay 40s linear infinite;
+  animation: moveScay 40s linear infinite;
+  right: 350px;
+  top: 40px;
+}
+.zilal-alquran > img:nth-of-type(2) {
+  top: 15%;
+  left: 50%;
+  animation: moveScay 40s linear reverse infinite;
+}
+.zilal-alquran > img:nth-of-type(3) {
+  -webkit-animation: moveScay 40s linear infinite;
+  animation: moveScay 40s linear infinite;
+  top: 5%;
+  left: 0%;
+}
+.zilal-alquran > img:last-of-type {
+  animation: moveScay 40s linear reverse infinite;
+  top: 90px;
+  right: 0px;
+}
+
+/* @keyframes moveScay {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(10px, 10px);
+  }
+  40% {
+    transform: translate(20px, 0px);
+  }
+  60% {
+    transform: translate(30px, 10px);
+  }
+  80% {
+    transform: translate(40px, 0);
+  }
+  100% {
+    transform: translate(50px, 10px);
+  }
+} */
+@-webkit-keyframes moveScay {
+  0% {
+    -webkit-transform: translate(-2000px, 0);
+    transform: translate(-2000px, 0);
+  }
+  25% {
+    -webkit-transform: translate(-1000px, 50px);
+    transform: translate(-1000px, 50px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  75% {
+    -webkit-transform: translate(1000px, 100px);
+    transform: translate(1000px, 100px);
+  }
+  100% {
+    -webkit-transform: translate(2000px, 0);
+    transform: translate(2000px, 0);
+  }
+}
+@keyframes moveScay {
+  0% {
+    -webkit-transform: translate(-2000px, 0);
+    transform: translate(-2000px, 0);
+  }
+  25% {
+    -webkit-transform: translate(-1000px, 50px);
+    transform: translate(-1000px, 50px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  75% {
+    -webkit-transform: translate(1000px, 100px);
+    transform: translate(1000px, 100px);
+  }
+  100% {
+    -webkit-transform: translate(2000px, 0);
+    transform: translate(2000px, 0);
+  }
+}
+.button-down i {
+  position: relative;
+  top: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.button-down.open i {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.button-down:hover i {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-animation: button-down 0.5s ease-in-out alternate infinite;
+  animation: button-down 0.5s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes button-down {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 10px;
+  }
+}
+
+@keyframes button-down {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 10px;
+  }
+}
+.hover-price span {
+  font-family: cursive;
+}
+.hover-price * {
+  -webkit-transition: all 150ms !important;
+  transition: all 150ms !important;
+}
+.hover-price:hover * {
+  color: white;
+  border-color: #fff;
+}
+
+.hover-button,
+.slick-arrow {
+  border: 1px solid var(--main-color-1);
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  display: grid;
+  place-items: center;
+}
+.hover-button:hover,
+.slick-arrow:hover {
+  background-color: var(--main-color-1);
+  color: white;
+}
+.hover-button:hover path,
+.slick-arrow:hover path {
+  fill: #fff;
+}
+.hover-button:hover::before,
+.slick-arrow:hover::before {
+  color: #fff;
+}
+.hover-button.slick-next,
+.slick-arrow.slick-next {
+  right: -80px;
+}
+.hover-button.slick-prev,
+.slick-arrow.slick-prev {
+  left: -80px;
+}
+.hover-button::before,
+.slick-arrow::before {
+  display: none;
+}
+
+.our-blog .slick-dots li {
+  border: 2px solid #cbcbcb;
+  border-radius: 50%;
+}
+.our-blog .slick-dots li button::before {
+  font-size: 14px;
+  top: -1px;
+  left: -1.5px;
+}
+
+footer {
+  background: url("../images/footer/bg-footer.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+body.blog .section-1 {
+  background: url("../images/blog/section-1/image-1.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+body.tafser-al-quran .section-1 {
+  background: url("../images/tafser-al-quran/image-1.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+:after,
+:before,
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+.active-link {
+  color: var(--main-color-2);
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.arrow-link:hover svg {
+  -webkit-animation: arrow-link 0.5s ease-in-out alternate infinite;
+  animation: arrow-link 0.5s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes arrow-link {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+}
+
+@keyframes arrow-link {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+}
+.overlay {
+  position: relative;
+}
+.overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.overlay-2 {
+  position: relative;
+}
+.overlay-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.move-image {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-animation: move-image 1.5s ease-in-out alternate infinite;
+  animation: move-image 1.5s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes move-image {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes move-image {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1300px !important;
+  }
+}
+@media (max-width: 768px) {
+  .zilal-alquran::after {
+    background-size: cover;
+  }
+  nav {
+    right: -50% !important;
+  }
+  body.blog .section-1 {
+    background-size: cover;
+  }
+} /*# sourceMappingURL=index.css.map */
+.section-1 {
+  background: url("/images/footer/bg-footer.png");
+}
